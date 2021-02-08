@@ -1,0 +1,141 @@
+@import "./styles/variables.scss";
+@import "./styles/mixins.scss";
+
+.App {
+	text-align: center;
+}
+
+.App-logo {
+	height: 40vmin;
+	pointer-events: none;
+}
+
+.App-header {
+	background-color: $header-main-color;
+	height: 58px;
+}
+
+
+.App-Navbar {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0% 5%;
+	height: inherit;
+	width: auto;
+	.App-logo {
+		height: 90%;
+		width: auto;
+	}
+	.App-search-bar {
+		min-width: 60%;
+		max-width: 70%;
+		height: 30px;
+		//@include displayFlex("row", "nowrap", "space-between", "center");
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
+		box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2),
+			0px 1px 2px rgba(0, 0, 0, 0.2);
+
+		.search-input {
+			color: black;
+			width: 80%;
+			height: inherit;
+			border: none;
+			padding: 0px 10px;
+		}
+		.search-icon-box {
+			background-color: #fff;
+			min-width: 20%;
+			max-width: 25%;
+			height: inherit;
+			//@include displayFlex("row", "nowrap", "center", "center");
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: flex-end;
+			align-items: center;
+			svg {
+				padding-right: 8px;
+			}
+		}
+	}
+}
+
+.main-container {
+	background-color: blue;
+	width: 90%;
+	margin: 30px 5% 0px 5%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: flex-start;
+
+	.results-aside {
+		background-color: yellow;
+		min-width: 20%;
+		max-width: 25%;
+		text-align: left;
+		padding: 5px 10px;
+
+		.aside-title {
+			font-weight: bold;
+			font-size: 22px;
+			margin-bottom: 5px;
+		}
+		.aside-subtitle {
+			font-weight: lighter;
+			font-size: 14px;
+			margin-left: 5px;
+			margin-bottom: 10px;
+		}
+		.aside-categories {
+			.categories-title {
+				font-weight: bold;
+				font-size: 18px;
+				margin-bottom: 5px;
+			}
+			.categories-list {
+				list-style-type: none;
+				margin: 0px;
+				margin-left: 5px;
+				padding: 0px;
+				font-weight: lighter;
+				font-size: 14px;
+
+				li {
+					margin-bottom: 4px;
+				}
+			}
+		}
+	}
+
+	.results-container {
+		background-color: lightcoral;
+		min-width: 70%;
+		//max-width: 75%;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-evenly;
+		align-items: center;
+
+		.result-box {
+			background-color: lightseagreen;
+			min-width: 230px;
+			max-width: 320px;
+			margin: 10px 0px;
+			border-radius: 10px;
+
+			.image-container {
+				width: 75%;
+				img {
+					width: 100%;
+					object-fit: cover;
+				}
+			}
+		}
+	}
+}
+

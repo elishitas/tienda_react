@@ -1,60 +1,54 @@
-import logo from './logo.png';
 import './App.scss';
-import SearchIcon from '@material-ui/icons/Search';
+import Header from './components/Header/index';
+import Aside from './components/Aside';
+import ResultBox from './components/ResultBox';
 
+const mockData = [
+  {
+    imageUrl: 'https://i.pinimg.com/originals/c6/52/b1/c652b110ce9854cef9ba399eed60417b.gif',
+    product: {
+      title: 'this is a product',
+      description: 'this is the description',
+      formerPrice: 1000,
+      currentPrice: 900,
+      discountPercentage: 30,
+      symbol: '$',
+      installments: 18,
+      hasFreeShipping: true,
+      manufacturer: 'Apple'
+    }
+  },
+  {
+    imageUrl: 'https://media3.giphy.com/media/efZeeUTH7aRdxZVjJW/giphy-downsized-medium.gif',
+    product: {
+      title: 'this is a product',
+      description: 'this is the description',
+      formerPrice: 10000,
+      currentPrice: 8500,
+      discountPercentage: 35,
+      symbol: '$',
+      installments: 18,
+      hasFreeShipping: false,
+      manufacturer: 'Apple'
+    }
+  },
+]
 
 function App() {
   return (
     <div className="App" >
-
-      <header className="App-header">
-        <nav className="App-Navbar">
-          <img src={logo} className="App-logo" alt="logo" />
-          <div className="App-search-bar">
-            <input className="search-input" type="search" placeholder="Buscar productos, marcas y más..." />
-            <div className="search-icon-box">
-              <SearchIcon style={{ color: "rgb(167, 167, 167)" }} fontSize="small" />
-            </div>
-          </div>
-        </nav>
-      </header>
-
-      <div className="main-container">
-        <aside className="results-aside">
-          <div className="aside-title">Notebook</div>
-          <div className="aside-subtitle">42069 Resultados</div>
-          <div className="aside-categories">
-            <div className="categories-title">Categorías</div>
-            <ul className="categories-list">
-              <li>Categoria 1</li>
-              <li>Categoria 2</li>
-              <li>Categoria 3</li>
-              <li>Categoria 4</li>
-              <li>Categoria 5</li>
-            </ul>
-          </div>
-        </aside>
-        
+        <Header />
+        <div className="main-container">
+        <Aside />
         <div className="results-container">
-          <div className="result-box">
-            <div className="image-container">
-            </div>
+          <ResultBox mockData={mockData[0]} />
+          <ResultBox mockData={mockData[1]} />
+          <ResultBox mockData={mockData[0]} />
+          <ResultBox mockData={mockData[1]} />
+          <ResultBox mockData={mockData[0]} />
+          <ResultBox mockData={mockData[1]} />
           </div>
-          <div className="result-box">
-            <div className="image-container">
-            </div>
-          </div>
-          <div className="result-box">
-            <div className="image-container">
-            </div>
-          </div>
-          <div className="result-box">
-            <div className="image-container">
-            </div>
-          </div>
-        </div>
       </div>
-      <div className="App-Container"></div>
     </div>
   );
 }

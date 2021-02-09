@@ -7,47 +7,6 @@
    box-sizing: border-box;
    width: 100vw;
 
-   /*.App-header {
-		background-color: $header-main-color;
-		height: 58px;
-		.App-Navbar {
-			@include displayFlex(row, nowrap, flex-start, center);
-			margin: 0% 5%;
-			height: inherit;
-			width: auto;
-			.App-logo {
-				height: 90%;
-				width: auto;
-			}
-			.App-search-bar {
-				min-width: 60%;
-				max-width: 65%;
-				height: 30px;
-				margin-left: 30px;
-				@include displayFlex(row, nowrap, space-between, center);
-				box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2),
-					0px 1px 2px rgba(0, 0, 0, 0.2);
-				.search-input {
-					color: black;
-					width: 80%;
-					height: inherit;
-					border: none;
-					padding: 0px 10px;
-				}
-				.search-icon-box {
-					background-color: #fff;
-					min-width: 20%;
-					max-width: 25%;
-					height: inherit;
-					@include displayFlex(row, nowrap, flex-end, center);
-					svg {
-						padding-right: 8px;
-					}
-				}
-			}
-		}
-	}*/
-
    .main-container {
       width: 90%;
       margin: 30px 5% 0px 5%;

@@ -109,3 +109,5 @@ class App extends React.Component {
 }
 
 export default App;
+
+//fijarte en mockdata de usar un map con en la de solodeportes!

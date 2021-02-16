@@ -1,0 +1,14 @@
+header div form input{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    font-size: 0.75em;
+  }
+  header div form button{
+    position: absolute;
+    right: 2px;
+    top: 3px;
+    padding: 5px;
+    height: 29px;
+    border: none;
+  }

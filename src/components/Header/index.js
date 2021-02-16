@@ -1,16 +1,20 @@
 import React from 'react';
-import Logo from '../Logo';
-import SearchBar from './components/SearchBar'
+import { Link } from 'react-router-dom';
+import { HOME_PAGE_ROUTE } from '../../utils/constants/routes';
+import HeaderLogo from '../HeaderLogo';
+import HeaderSearchInput from './components/HeaderSearchInput';
 
-const Header = () => {
-    return (
-        <header className="App-header">
-            <nav className="App-Navbar">
-                <Logo />
-                <SearchBar />
-            </nav>
-        </header>
-    )
+const Header = (props) => {
+  return (    
+    <header>
+      <div className='container'>
+        <Link to={HOME_PAGE_ROUTE}>
+          <HeaderLogo />
+        </Link>
+        <HeaderSearchInput />
+      </div>
+    </header>
+  )
 };
 
 export default Header;

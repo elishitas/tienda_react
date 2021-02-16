@@ -2,7 +2,7 @@ import './App.scss';
 import Header from './components/Header/index';
 import Aside from './components/Aside';
 import ResultBox from './components/ResultBox';
-import { GETCATEGORIES } from '../src/utils/constants/endpoints';
+import { GET_CATEGORIES_URL } from '../src/utils/constants/endpoints';
 import React from 'react';
 /*
 const mockData = [
@@ -77,7 +77,7 @@ class App extends React.Component {
 
   componentDidMount() {
 
-    fetch(GETCATEGORIES)
+    fetch(GET_CATEGORIES_URL)
       .then(resp => resp.json())
       .then(data => {
         this.setState({

@@ -1,5 +1,4 @@
 # React 2021
-#### <a href='arayamariaelisa@gmail.com'>arayamariaelisa@gmail.com</a>
 
 ## 🌟 Summary  🚀 
 

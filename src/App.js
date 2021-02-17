@@ -1,113 +1,35 @@
-import './App.scss';
-import Header from './components/Header/index';
-import Aside from './components/Aside';
-import ResultBox from './components/ResultBox';
-import { GET_CATEGORIES_URL } from '../src/utils/constants/endpoints';
 import React from 'react';
-/*
-const mockData = [
-  {
-    imageUrl: 'https://i.pinimg.com/originals/c6/52/b1/c652b110ce9854cef9ba399eed60417b.gif',
-    product: {
-      title: 'this is a product',
-      description: 'this is the description',
-      formerPrice: 1000,
-      currentPrice: 900,
-      discountPercentage: 30,
-      symbol: '$',
-      installments: 18,
-      hasFreeShipping: true,
-      manufacturer: 'Apple'
-    }
-  },
-  {
-    imageUrl: 'https://media3.giphy.com/media/efZeeUTH7aRdxZVjJW/giphy-downsized-medium.gif',
-    product: {
-      title: 'this is a product',
-      description: 'this is the description',
-      formerPrice: 10000,
-      currentPrice: 8500,
-      discountPercentage: 35,
-      symbol: '$',
-      installments: 18,
-      hasFreeShipping: false,
-      manufacturer: 'Apple'
-    }
-  },
-]
-*/
+import './App.css';
+import Header from './components/Header';
+//Esto esta igual en el mio
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      mockData: [
-        {
-          imageUrl: 'https://i.pinimg.com/originals/c6/52/b1/c652b110ce9854cef9ba399eed60417b.gif',
-          product: {
-            title: 'this is a product',
-            description: 'this is the description',
-            formerPrice: 1000,
-            currentPrice: 900,
-            discountPercentage: 30,
-            symbol: '$',
-            installments: 18,
-            hasFreeShipping: true,
-            manufacturer: 'Apple'
-          }
-        },
-        {
-          imageUrl: 'https://media3.giphy.com/media/efZeeUTH7aRdxZVjJW/giphy-downsized-medium.gif',
-          product: {
-            title: 'this is a product',
-            description: 'this is the description',
-            formerPrice: 10000,
-            currentPrice: 8500,
-            discountPercentage: 35,
-            symbol: '$',
-            installments: 18,
-            hasFreeShipping: false,
-            manufacturer: 'Apple'
-          }
-        },
-      ],
-      categories: [],
-    }
-  }
+import { HOME_PAGE_ROUTE, CATEGORY_PAGE_ROUTE, ITEM_PAGE_ROUTE, SEARCH_RESULTS_PAGE_ROUTE } from './utils/constants/routes';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-  componentDidMount() {
+import Home from './pages/Home';
+import ProductDetail from './pages/ProductDetail';
 
-    fetch(GET_CATEGORIES_URL)
-      .then(resp => resp.json())
-      .then(data => {
-        this.setState({
-          categories: data
-        })
-        console.log(this.state)
-      })
-      .catch(err => console.log(err))
-  }
+import PublicationsContextProvider from './context/PublicationsContext';
 
-  render() {
-    return (
-      <div className="App" >
-        <Header />
-        <div className="main-container">
-        <Aside categories={this.state.categories} />
-          <div className="results-container">
-            <ResultBox mockData={this.state.mockData[0]} />
-            <ResultBox mockData={this.state.mockData[1]} />
-            <ResultBox mockData={this.state.mockData[0]} />
-            <ResultBox mockData={this.state.mockData[1]} />
-            <ResultBox mockData={this.state.mockData[0]} />
-            <ResultBox mockData={this.state.mockData[1]} />
-          </div>
-        </div>
+
+const App = () => {
+  return (
+    <PublicationsContextProvider>
+      <div>
+          <BrowserRouter>
+            <Header />
+            <main>
+              <Switch>
+                <Route path={HOME_PAGE_ROUTE} component={Home} exact />
+                <Route path={CATEGORY_PAGE_ROUTE} component={Home} exact />
+                <Route path={SEARCH_RESULTS_PAGE_ROUTE} component={Home} exact />
+                <Route path={ITEM_PAGE_ROUTE} component={ProductDetail} exact />
+              </Switch>
+            </main>
+          </BrowserRouter>
       </div>
-    )
-  }
-}
+    </PublicationsContextProvider>
+  );
+};  
 
 export default App;
-
-//fijarte en mockdata de usar un map con en la de solodeportes!

@@ -1,0 +1,39 @@
+main section article a>div>div{
+    height: 40%;
+  }
+  .product-box-body{
+    padding: 5px;
+  }
+  .prev-price{
+    text-decoration: line-through;
+    color:#cccccc;
+  }
+  .price-div{
+    display: flex;
+    align-items: center;
+  }
+  .product-price{
+    font-size: 1.75em;
+  }
+  .discount{
+    margin-left: 10px;
+  }
+  .installments{
+    color: #05A937;
+    font-size: 0.85em;
+  }
+  .shipping, .ship-full, .discount{
+    color: #05A937;
+    font-weight: bold;  
+    font-size: 0.85em;
+  }
+  .ship-full{
+    margin-left: 10px;
+  }
+  .product-title{
+    font-size: 0.85em;
+  }
+  
+  .bg-product-detail-box>div {
+    width: 40%;
+  }

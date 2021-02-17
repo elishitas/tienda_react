@@ -1,0 +1,11 @@
+main section article{
+    width: 33.3%;
+    padding: 7px;
+    height: 450px;
+  }
+  main section article a>div{
+    background-color: white;
+    padding: 10px;
+    border-radius: 2%;
+    height:100%;
+  }

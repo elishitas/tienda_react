@@ -1,0 +1,10 @@
+.bg-product-detail-box{
+    display: flex;
+    width: 100%;
+    background-color: white;
+    border-radius: 1%;
+    font-size: 1.2em;
+    padding: 10px;
+    height: 500px;
+  }
+  

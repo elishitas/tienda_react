@@ -1,0 +1,18 @@
+.product-detail-buttons-div {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+  .product-detail-buttons-div button {
+    font-size: 1em;
+    padding: 10px;
+    background-color: #3483fa;
+    color: white;
+    border-color: transparent;
+    border-radius: 6px;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+  .product-detail-buttons-div button:focus{  
+    border-color: transparent;
+  }

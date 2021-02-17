@@ -1,11 +1,12 @@
 import React from 'react';
+import './styles/index.css';
 
-const ResultImage = (props) => {
-    return (
-        <div className="image-container">
-            <img src={props.imageUrl} className="result-image" alt="result" />
-        </div>
-    )
-}
+const ProductBoxImg = ({ photo, title }) => {
+  return (
+    <figure>
+      <img src={photo} alt={title} />
+    </figure>
+  );
+};
 
-export default ResultImage;
+export default ProductBoxImg;

@@ -1,3 +1,4 @@
+// creando context -> cartContext 
 import React from 'react'
 
 export const PublicationsContext = React.createContext()
